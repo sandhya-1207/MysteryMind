@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import Home from "./components/Home";
+import Home from "./Components/Home";
 import "./App.css";
 
 function App() {
