@@ -25,8 +25,7 @@ function App() {
     setMystery(null);
 
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/generate-mystery",
+      const response = await axios.post("https://mysterymind-y0nw.onrender.com/generate-mystery", 
         {
           theme: settings.theme,
           difficulty: settings.difficulty,
