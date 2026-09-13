@@ -10,33 +10,40 @@ from google import genai
 from prompts import create_mystery_prompt
 
 
+# Load environment variables
 load_dotenv()
 
 api_key = os.getenv("GEMINI_API_KEY")
 
+# Gemini client
 client = genai.Client(api_key=api_key)
 
+# FastAPI app
 app = FastAPI()
 
+
+# CORS configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-    "http://localhost:5173",
-    "http://localhost:5174",
-    "https://mystery-mind-lgcz.vercel.app"
-],
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "https://mystery-mind-lgcz.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 
+# Request model
 class MysteryRequest(BaseModel):
     theme: str
     difficulty: str
     puzzleCount: int
 
 
+# Test route
 @app.get("/")
 def home():
     return {
@@ -44,6 +51,7 @@ def home():
     }
 
 
+# Generate mystery
 @app.post("/generate-mystery")
 def generate_mystery(request: MysteryRequest):
 
