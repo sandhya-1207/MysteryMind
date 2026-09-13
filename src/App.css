@@ -1,0 +1,534 @@
+/* =========================================
+   MYSTERYMIND - MAIN STYLES
+   Dark Cinematic Escape Room Theme
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #080b10;
+  color: #f5f1e8;
+}
+
+/* =========================================
+   HOME PAGE
+   ========================================= */
+
+.home {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Background video */
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 0;
+}
+
+/* Content over video */
+
+.content {
+  position: relative;
+  z-index: 1;
+
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 20px;
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 48px;
+  margin-bottom: 8px;
+
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.8));
+}
+
+.home h1 {
+  margin: 0;
+
+  font-family: "Cinzel", serif;
+
+  color: #f5f1e8;
+
+  font-size: 58px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  text-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.9),
+    0 0 25px rgba(202, 166, 86, 0.25);
+}
+
+.subtitle {
+  margin-top: 12px;
+
+  color: #ddd6c7;
+
+  font-size: 17px;
+  font-weight: 400;
+
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* =========================================
+   HOME CARD
+   ========================================= */
+
+.card {
+  width: 430px;
+  max-width: 100%;
+
+  padding: 32px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  border-radius: 18px;
+
+  background: rgba(7, 10, 14, 0.82);
+
+  border: 1px solid rgba(202, 166, 86, 0.35);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.65),
+    0 0 30px rgba(0, 0, 0, 0.35);
+
+  backdrop-filter: blur(8px);
+}
+
+/* Labels */
+
+.card label {
+  margin-top: 8px;
+
+  color: #d8c38a;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+}
+
+/* Select boxes */
+
+.card select {
+  width: 100%;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  color: #f5f1e8;
+
+  background: #10151b;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+
+  cursor: pointer;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card select:hover {
+  border-color: rgba(202, 166, 86, 0.6);
+}
+
+.card select:focus {
+  border-color: #caa656;
+
+  box-shadow:
+    0 0 0 3px rgba(202, 166, 86, 0.12);
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.card button,
+.game-card button {
+  padding: 14px 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  color: #111;
+
+  background: #caa656;
+
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card button {
+  margin-top: 18px;
+}
+
+.card button:hover,
+.game-card button:hover {
+  background: #e0c276;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 25px rgba(202, 166, 86, 0.25);
+}
+
+.card button:active,
+.game-card button:active {
+  transform: translateY(0);
+}
+
+.game-card button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================================
+   GAME SCREEN
+   ========================================= */
+
+.game-started {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #151b23 0%,
+      #080b10 55%,
+      #05070a 100%
+    );
+}
+
+/* Game card */
+
+.game-card {
+  width: 650px;
+  max-width: 95%;
+
+  padding: 40px;
+
+  text-align: center;
+
+  border-radius: 20px;
+
+  color: #f5f1e8;
+
+  background: #10151b;
+
+  border: 1px solid rgba(202, 166, 86, 0.35);
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.7);
+
+  animation: cardAppear 0.4s ease;
+}
+
+/* Card entrance animation */
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   GAME ICON
+   ========================================= */
+
+.game-icon {
+  font-size: 55px;
+
+  margin-bottom: 10px;
+
+  filter:
+    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.7));
+}
+
+/* =========================================
+   GAME TITLES
+   ========================================= */
+
+.game-card h1 {
+  margin: 10px 0 25px;
+
+  font-family: "Cinzel", serif;
+
+  color: #e5cc91;
+
+  font-size: 32px;
+
+  letter-spacing: 1px;
+}
+
+.game-card h2 {
+  margin-top: 25px;
+
+  font-family: "Cinzel", serif;
+
+  color: #d8c38a;
+
+  font-size: 23px;
+}
+
+/* =========================================
+   GAME TEXT
+   ========================================= */
+
+.game-card p {
+  margin: 12px 0;
+
+  color: #d8d5ce;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.game-card strong {
+  color: #e5cc91;
+}
+
+/* Horizontal line */
+
+.game-card hr {
+  margin: 25px 0;
+
+  border: none;
+
+  border-top:
+    1px solid rgba(202, 166, 86, 0.25);
+}
+
+/* =========================================
+   ANSWER INPUT
+   ========================================= */
+
+.game-card input {
+  width: 100%;
+
+  padding: 14px;
+
+  margin: 12px 0;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 10px;
+
+  background: #080b10;
+
+  color: #f5f1e8;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.game-card input::placeholder {
+  color: #777d85;
+}
+
+.game-card input:focus {
+  border-color: #caa656;
+
+  box-shadow:
+    0 0 0 3px rgba(202, 166, 86, 0.12);
+}
+
+/* =========================================
+   GAME BUTTONS
+   ========================================= */
+
+.game-card button {
+  margin: 7px 4px;
+
+  min-width: 150px;
+}
+
+/* =========================================
+   HINT BOX
+   ========================================= */
+
+.hint-box {
+  margin-top: 18px;
+
+  padding: 16px;
+
+  border-radius: 10px;
+
+  background: rgba(202, 166, 86, 0.08);
+
+  border:
+    1px solid rgba(202, 166, 86, 0.3);
+
+  color: #ddd6c7;
+
+  line-height: 1.6;
+
+  text-align: left;
+
+  animation: cardAppear 0.25s ease;
+}
+
+.hint-box strong {
+  color: #e5cc91;
+}
+
+/* =========================================
+   ANSWER MESSAGE
+   ========================================= */
+
+.message {
+  margin: 18px 0;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  color: #f5f1e8;
+
+  font-weight: 600;
+
+  animation: cardAppear 0.25s ease;
+}
+
+/* =========================================
+   LOADING
+   ========================================= */
+
+.game-card p:last-child {
+  color: #bdb7aa;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .content {
+    padding: 35px 15px;
+  }
+
+  .home h1 {
+    font-size: 42px;
+    letter-spacing: 2px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .logo {
+    font-size: 40px;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
+  .game-card {
+    padding: 28px 20px;
+  }
+
+  .game-card h1 {
+    font-size: 26px;
+  }
+
+  .game-card p {
+    font-size: 15px;
+  }
+
+  .game-card button {
+    width: 100%;
+    margin: 6px 0;
+  }
+}
